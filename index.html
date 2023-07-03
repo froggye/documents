@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0,
+                      minimum-scale=1.0, maximum-scale=1.0">
+    <title>Документы</title>
+
+    <meta name="description"
+          content="Официальный портал Тихоокеанского государственного университета - одного из наиболее крупных вузов Дальнего востока РФ. ">
+    <meta name="keywords" content="Тихоокеанский государственный университет, ТОГУ, политен, Хабаровск">
+    <meta property="og:image" content="img/favicons/favicon114x114.png">
+    <meta property="og:title" content="Тихоокеанский государственный университет">
+    <meta property="og:description"
+          content="Официальный портал Тихоокеанского государственного университета - одного из наиболее крупных вузов Дальнего востока РФ. ">
+
+
+    <!-- FAVICONS -->
+    <link rel="icon" href="img/favicons/favicon.png" type="image/png"> <!-- 96x96 -->
+    <link rel="shortcut icon" href="img/favicons/favicon.ico"> <!-- 16x16 -->
+    <link rel="apple-touch-icon" href="img/favicons/favicon.png"> <!-- 96x96 -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicons/favicon144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicons/favicon114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicons/favicon72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/favicon57x57.png">
+
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mainNew.css">
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
+
+<!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.css">-->
+<!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="js/jquery/jquery-3.7.0.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+<style>
+    header, footer {
+        height: 100px;
+        background-color: #780000;
+    }
+</style>
+
+
+<header >
+
+</header>
+
+
+
+<main>
+
+    <div class="content-main container-xl">
+        <aside class="side-menu">
+            <div class="side-menu--mobile">
+                <button id="side-menu--open">
+<!--                    <i class="fa fa-list"></i>-->
+<!--                    <i class="fa fa-table"></i>-->
+                    <i class="fa fa-list-ul"></i>
+<!--                    <i class="fa fa-angle-double-right"></i>-->
+                    <span>Уставы</span>
+                </button>
+            </div>
+            <div class="side-menu-container translate400" id="menu">
+                <div class="side-menu--mobile" style="margin-left: auto; margin-right: 0;">
+                    <button id="side-menu--close">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <a class="button-link active" href="#">Уставы</a>
+
+                <!-- ПОДПУНКТЫ -->
+<!--                <ul>-->
+<!--                    <li class="sub-link"><a class="active" href="">Выбранный подпункт</a></li>-->
+<!--                    <li class="sub-link"><a href="#">Подпункт</a></li>-->
+<!--                    <li class="sub-link"><a href="#">Подпункт</a></li>-->
+<!--                </ul>-->
+
+                <a class="button-link" href="#">Свидетельства</a>
+                <a class="button-link" href="#">Лицензии</a>
+                <a class="button-link" href="#">Положения</a>
+                <a class="button-link" href="#">Приказы</a>
+                <a class="button-link" href="#">Порядки</a>
+                <a class="button-link" href="#">Правила</a>
+                <a class="button-link" href="#">Программы</a>
+                <a class="button-link" href="#">Распоряжения</a>
+                <a class="button-link" href="#">Регламенты</a>
+                <a class="button-link" href="#">Инструкции</a>
+                <a class="button-link" href="#">Сертификаты</a>
+                <a class="button-link" href="#">Формы и образцы</a>
+                <a class="button-link" href="#">Другое</a>
+                <a class="button-link" href="#">Архивные документы</a>
+            </div>
+        </aside>
+        <div class="content-body">
+
+
+            <h1>Документы и локально-нормативные акты ТОГУ</h1>
+
+            <form class="document-search">
+                <button type="submit" class="document-search-button">
+                    <i class="fa fa-search"></i>
+                </button>
+                <input type="text" class="document-search-field" placeholder="Найти по всем документам">
+            </form>
+
+
+        </div>
+    </div>
+
+
+
+
+</main>
+
+
+
+<footer>
+
+</footer>
+
+<script src="js/jquery/jquery-3.7.0.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('#side-menu--open').click(function () {
+        $('#menu').removeClass('translate400').addClass('translate0');
+    });
+});
+$(document).ready(function () {
+    $('#side-menu--close').click(function () {
+        $('#menu').removeClass('translate0').addClass('translate400');
+    });
+});
+</script>
+
+
+
+
+</body>
+</html>
