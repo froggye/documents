@@ -256,6 +256,8 @@ h3, .h3 {
     /*text-transform: uppercase;*/
 }
 
+/* ================== СТРОКА ПОИСКА ===============*/
+
 .document-search{
     display: flex;
     flex-direction: row;
@@ -263,16 +265,24 @@ h3, .h3 {
     border: 1px solid #DADADA;
 }
 
-.document-search-button {
+.document-search-button, .document-clear-button {
     background: transparent;
     border: none;
     outline: none;
-    padding: 0 0 0 16px;
 
     display: flex;
     align-items: center;
     color: #595959;
     opacity: 60%;
+}
+
+.document-search-button {
+    padding: 0 0 0 16px;
+}
+
+.document-clear-button {
+    padding: 0 16px 0 0;
+    cursor: pointer;
 }
 
 .document-search-field {
@@ -284,4 +294,133 @@ h3, .h3 {
     background-color: transparent;
 
     color: #383B40;
+}
+
+/* ================== ФИЛЬТРЫ ===============*/
+
+.document-filters {
+    margin: 32px 0;
+}
+
+.dropdown {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dropdown--container {
+    width: 100%;
+    max-width: 32%;
+}
+
+.dropdown--button {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #DADADA;
+    outline: none;
+    padding: 12px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+
+    transition: all 200ms ease;
+}
+
+.dropdown--button span {
+    width: 100%;
+    text-align: left;
+
+    text-transform: uppercase;
+    color: #595959;
+    opacity: 60%;
+    font-weight: 700;
+}
+
+.dropdown--button i {
+    color: #595959;
+    opacity: 60%;
+
+    transition: all 200ms ease;
+}
+
+.dropdown--button.active {
+    background-color: #E3E3E3 !important;
+}
+
+.dropdown--button.active span, .dropdown--button.active i {
+    opacity: 100%;
+}
+
+.dropdown--button.active i {
+    transform: rotate(180deg);
+}
+
+
+.dropdown--button.has-filters {
+    background-color: #EEEEEE;
+}
+
+.dropdown--button.has-filters span, .dropdown--button.has-filters i {
+    opacity: 100%;
+    color: #444A8F;
+}
+
+
+.dropdown--list {
+    margin: 8px 0 0 0;
+    padding: 20px 12px;
+    list-style-type: none;
+    position: absolute;
+    /*top: 50px;*/
+    transform: translateY(-20px);
+    box-shadow: 0 0 5px 0 #00000025;
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    max-width: 32%;
+    z-index: 2;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms ease;
+}
+
+.dropdown--list.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown--list-item {
+    margin: 0 0 8px 0;
+    padding: 0 0 0 24px;
+    cursor: pointer;
+    color: #595959;
+    opacity: 60%;
+}
+
+.dropdown--list-item::before {
+    content: url("../img/svg/r-empty.svg");
+    width: 0;
+    height: 16px;
+
+    display: inline-block;
+
+    position: relative;
+    top: 2px;
+    left: -24px;
+}
+
+.dropdown--list-item.active {
+    color: #444A8F;
+    opacity: 100%;
+    font-weight: 700;
+}
+
+.dropdown--list-item.active::before {
+    content: url("../img/svg/r-active.svg");
+}
+
+.dropdown--input-hidden {
+    display: none;
 }
