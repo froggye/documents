@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/mainNew.css">
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-    <script src="js/bootstrap/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.js" async></script>
 
 <!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.css">-->
 <!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">-->
@@ -119,12 +119,58 @@
 
             <section class="document-filters">
                 <div class="dropdown">
-                    <div class="dropdown--container">
+                    <div class="dropdown--container dropdown-checkbox">
                         <button type="button" class="dropdown--button">
                             <span>Номер</span>
                             <i class="fa fa-angle-down"></i>
                         </button>
-                        <ul class="dropdown--list">
+                        <ul class="dropdown--list dropdown--list-chb">
+                            <li class="dropdown--list-item">
+                                <label for="i-1">1
+                                    <input type="checkbox" id="i-1" name="i-1">
+                                    <span class="checkbox--mark"></span>
+                                </label>
+                            </li>
+                            <li class="dropdown--list-item">
+                                <label for="i-2">2
+                                    <input type="checkbox" id="i-2" name="i-2">
+                                    <span class="checkbox--mark"></span>
+                                </label>
+                            </li>
+                            <li class="dropdown--list-item">
+                            <label for="i-3">3
+                                <input type="checkbox" id="i-3" name="i-3">
+                                <span class="checkbox--mark"></span>
+                            </label>
+                            </li>
+                            <li class="dropdown--list-item">
+                            <label for="i-4">4
+                                <input type="checkbox" id="i-4" name="i-4">
+                                <span class="checkbox--mark"></span>
+                            </label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown--container dropdown-single">
+                        <button type="button" class="dropdown--button">
+                            <span>Тема</span>
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown--list dropdown--list-single">
+                            <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
+                            <li class="dropdown--list-item" data-value="1">1</li>
+                            <li class="dropdown--list-item" data-value="2">2</li>
+                            <li class="dropdown--list-item" data-value="3">3</li>
+                        </ul>
+                        <input type="text" name="select-category" value="" class="dropdown--input-hidden">
+                    </div>
+                    <div class="dropdown--container dropdown-single">
+                        <button type="button" class="dropdown--button">
+                            <span>Дата</span>
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown--list dropdown--list-single">
                             <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
                             <li class="dropdown--list-item" data-value="1">1</li>
                             <li class="dropdown--list-item" data-value="2">2</li>
@@ -133,45 +179,6 @@
                         <input type="text" name="select-category" value="" class="dropdown--input-hidden">
                     </div>
 
-                    <div class="dropdown--container">
-                        <button type="button" class="dropdown--button">
-                            <span>Номер</span>
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-                        <ul class="dropdown--list">
-                            <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
-                            <li class="dropdown--list-item" data-value="1">1</li>
-                            <li class="dropdown--list-item" data-value="2">2</li>
-                            <li class="dropdown--list-item" data-value="3">3</li>
-                        </ul>
-                        <input type="text" name="select-category" value="" class="dropdown--input-hidden">
-                    </div>
-                    <div class="dropdown--container">
-                        <button type="button" class="dropdown--button">
-                            <span>Номер</span>
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-                        <ul class="dropdown--list">
-                            <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
-                            <li class="dropdown--list-item" data-value="1">1</li>
-                            <li class="dropdown--list-item" data-value="2">2</li>
-                            <li class="dropdown--list-item" data-value="3">3</li>
-                        </ul>
-                        <input type="text" name="select-category" value="" class="dropdown--input-hidden">
-                    </div>
-                    <div class="dropdown--container">
-                        <button type="button" class="dropdown--button">
-                            <span>Номер</span>
-                            <i class="fa fa-angle-down"></i>
-                        </button>
-                        <ul class="dropdown--list">
-                            <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
-                            <li class="dropdown--list-item" data-value="1">1</li>
-                            <li class="dropdown--list-item" data-value="2">2</li>
-                            <li class="dropdown--list-item" data-value="3">3</li>
-                        </ul>
-                        <input type="text" name="select-category" value="" class="dropdown--input-hidden">
-                    </div>
                 </div>
             </section>
 
@@ -231,53 +238,37 @@ $(document).ready(function () {
     });
 </script>
 
+<script type="text/javascript" src="js/document-filters.js"></script>
+
 <script>
-    /* Фильтры */
+    $(document).ready(function () {
+        var container = $(".dropdown--button");
+        var list = $(".dropdown--list");
 
-    document.querySelectorAll('.dropdown--container').forEach(function (dropdownWrapper) {
-        const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
-        const dropdownList = dropdownWrapper.querySelector('.dropdown--list');
-        const dropdownItems = dropdownWrapper.querySelectorAll('.dropdown--list-item');
-        const dropdownInput = dropdownWrapper.querySelector('.dropdown--input-hidden');
-
-        dropdownBtn.addEventListener('click', function () {
-            this.classList.toggle('active');
-            dropdownList.classList.toggle('visible');
+        // нажатие по другому фильтру (оставить только один активный)
+        container.click(function() {
+            if ($(this).hasClass('active')){
+                container.removeClass('active');
+                list.removeClass('visible');
+                $(this).addClass('active');
+                $(this).closest('.dropdown--container').find(list).addClass('visible');
+            }
         });
 
-        dropdownItems.forEach(function (listItem) {
-            listItem.addEventListener('click', function (e) {
-                dropdownItems.forEach(function (el) {
-                    el.classList.remove('active');
-                })
-                e.target.classList.add('active');
-                if (this.dataset.value === "Не выбрано") dropdownBtn.classList.remove('has-filters');
-                else dropdownBtn.classList.add('has-filters');
-                dropdownInput.value = this.dataset.value;
+        // нажатие вне фильтра
+        $(document).mouseup(function(e)
+        {
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0
+            && !list.is(e.target) && list.has(e.target).length === 0)
+            {
+                list.removeClass('visible');
+                container.removeClass('active');
+            }
+        });
 
-                // dropdownBtn.classList.remove('active');
-                // dropdownList.classList.remove('visible');
-            })
-        })
 
-        // document.addEventListener('click', function (e) {
-        //     if (e.target !== dropdownBtn) {
-        //         dropdownBtn.classList.remove('active');
-        //         dropdownList.classList.remove('visible');
-        //     }
-        // })
-
-        // $(document).mouseup(function(e)
-        // {
-        //     var container = $("YOUR CONTAINER SELECTOR");
-        //
-        //     // if the target of the click isn't the container nor a descendant of the container
-        //     if (!container.is(e.target) && container.has(e.target).length === 0)
-        //     {
-        //         container.hide();
-        //     }
-        // });
-    })
+    });
 </script>
 
 </body>
