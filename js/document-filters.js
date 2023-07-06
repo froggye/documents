@@ -35,6 +35,7 @@ document.querySelectorAll('.dropdown-checkbox').forEach(function (dropdownWrappe
     const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
     const dropdownList = dropdownWrapper.querySelector('.dropdown--list');
     const dropdownItems = dropdownWrapper.querySelectorAll('.dropdown--list-item');
+    const clearButton =  dropdownWrapper.querySelector('.dropdown--text-button');
 
     // открыть-закрыть выпадающее меню
     dropdownBtn.addEventListener('click', function () {
@@ -73,6 +74,19 @@ document.querySelectorAll('.dropdown-checkbox').forEach(function (dropdownWrappe
             // dropdownBtn.classList.remove('active');
             // dropdownList.classList.remove('visible');
         });
+    });
+
+    clearButton.addEventListener('click', function () {
+        dropdownItems.forEach(function (el) {
+            let checkbox = el.querySelector('input[type="checkbox"]');
+            if (checkbox.checked) {
+                el.classList.remove('active');
+                checkbox.checked = false;
+            }
+            // console.log(label);
+        });
+
+        dropdownBtn.classList.remove('has-filters');
     });
 
 });
