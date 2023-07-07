@@ -333,13 +333,19 @@
                             <span>Дата</span>
                             <i class="fa fa-angle-down"></i>
                         </button>
-                        <ul class="dropdown--list dropdown--list-single">
-                            <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
-                            <li class="dropdown--list-item" data-value="1">1</li>
-                            <li class="dropdown--list-item" data-value="2">2</li>
-                            <li class="dropdown--list-item" data-value="3">3</li>
-                        </ul>
-                        <input type="text" name="select-category" value="" class="dropdown--input-hidden">
+                        <div class="dropdown--list">
+                            <span style="color: #9B9B9B; font-weight: bold; margin-bottom: 8px;">От</span>
+                            <div class="dropdown--date-wrapper">
+                                <input type="text" name="select-start-date" value="" class="dropdown--date">
+                                <i class="fa fa-calendar-alt"></i>
+                            </div>
+                            <span style="color: #9B9B9B; font-weight: bold; margin-bottom: 8px;">До</span>
+                            <div class="dropdown--date-wrapper">
+                                <input type="text" name="select-start-date" value="" class="dropdown--date">
+                                <i class="fa fa-calendar-alt"></i>
+                            </div>
+                            <button class="dropdown--text-button">Сбросить даты</button>
+                        </div>
                     </div>
 
                 </div>
