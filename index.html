@@ -29,14 +29,16 @@
     <link rel="stylesheet" href="css/mainNew.css">
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-    <script src="js/bootstrap/bootstrap.bundle.js" async></script>
+    <script src="js/bootstrap/bootstrap.bundle.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-datepicker.min.css">
 
 <!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.css">-->
 <!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <script src="js/jquery/jquery-3.7.0.min.js"></script>
+<!--    <script src="js/jquery/jquery-3.7.0.min.js"></script>-->
 
 
 </head>
@@ -105,7 +107,7 @@
         <div class="content-body">
 
 
-            <h1>Документы и локально-нормативные акты ТОГУ</h1>
+            <h1>Документы</h1>
 
             <form class="document-search">
                 <button type="submit" class="document-search-button">
@@ -119,6 +121,8 @@
 
             <section class="document-filters">
                 <div class="dropdown">
+
+                    <!----- ЧЕКБОКСЫ ------>
                     <div class="dropdown--container dropdown-checkbox">
                         <button type="button" class="dropdown--button">
                             <span>Номер</span>
@@ -255,54 +259,13 @@
                                         <span class="checkbox--mark"></span>
                                     </label>
                                 </li>
-                                <li class="dropdown--list-item" data-value="21">
-                                    <label for="i-21">21
-                                        <input type="checkbox" id="i-21" name="i-21">
-                                        <span class="checkbox--mark"></span>
-                                    </label>
-                                </li>
-                                <li class="dropdown--list-item" data-value="22">
-                                    <label for="i-22">22
-                                        <input type="checkbox" id="i-22" name="i-22">
-                                        <span class="checkbox--mark"></span>
-                                    </label>
-                                </li>
-                                <li class="dropdown--list-item" data-value="23">
-                                    <label for="i-23">23
-                                        <input type="checkbox" id="i-23" name="i-23">
-                                        <span class="checkbox--mark"></span>
-                                    </label>
-                                </li>
-                                <li class="dropdown--list-item" data-value="24">
-                                    <label for="i-24">24
-                                        <input type="checkbox" id="i-24" name="i-24">
-                                        <span class="checkbox--mark"></span>
-                                    </label>
-                                </li>
-                                <li class="dropdown--list-item" data-value="25">
-                                    <label for="i-25">25
-                                        <input type="checkbox" id="i-25" name="i-25">
-                                        <span class="checkbox--mark"></span>
-                                    </label>
-                                </li>
-                                <li class="dropdown--list-item" data-value="26">
-                                    <label for="i-26">26
-                                        <input type="checkbox" id="i-26" name="i-26">
-                                        <span class="checkbox--mark"></span>
-                                    </label>
-                                </li>
-                                <li class="dropdown--list-item" data-value="27">
-                                    <label for="i-27">27
-                                        <input type="checkbox" id="i-27" name="i-27">
-                                        <span class="checkbox--mark"></span>
-                                    </label>
-                                </li>
                             </ul>
                             <button class="dropdown--text-button">Сбросить фильтры</button>
                         </div>
 
                     </div>
 
+                    <!----- ВЫБОР ОДНОГО ВАРИАНТА ------>
                     <div class="dropdown--container dropdown-single">
                         <button type="button" class="dropdown--button">
                             <span>Тема</span>
@@ -323,29 +286,56 @@
                                 <li class="dropdown--list-item" data-value="1">1</li>
                                 <li class="dropdown--list-item" data-value="2">2</li>
                                 <li class="dropdown--list-item" data-value="3">3</li>
+                                <li class="dropdown--list-item" data-value="4">4</li>
+                                <li class="dropdown--list-item" data-value="5">5</li>
+                                <li class="dropdown--list-item" data-value="6">6</li>
+                                <li class="dropdown--list-item" data-value="7">7</li>
+                                <li class="dropdown--list-item" data-value="8">8</li>
+                                <li class="dropdown--list-item" data-value="9">9</li>
+                                <li class="dropdown--list-item" data-value="10">10</li>
+                                <li class="dropdown--list-item" data-value="11">11</li>
+                                <li class="dropdown--list-item" data-value="12">12</li>
+                                <li class="dropdown--list-item" data-value="13">13</li>
+                                <li class="dropdown--list-item" data-value="14">14</li>
+                                <li class="dropdown--list-item" data-value="15">15</li>
+                                <li class="dropdown--list-item" data-value="16">16</li>
+                                <li class="dropdown--list-item" data-value="17">17</li>
+                                <li class="dropdown--list-item" data-value="18">18</li>
+                                <li class="dropdown--list-item" data-value="19">19</li>
+                                <li class="dropdown--list-item" data-value="20">20</li>
 
                             </ul>
                             <input type="text" name="select-category" value="" class="dropdown--input-hidden">
                         </div>
                     </div>
-                    <div class="dropdown--container dropdown-single">
+
+                    <!----- ИНТЕРВАЛ ДАТ ------>
+                    <div class="dropdown--container dropdown-datepicker">
                         <button type="button" class="dropdown--button">
                             <span>Дата</span>
                             <i class="fa fa-angle-down"></i>
                         </button>
-                        <div class="dropdown--list">
-                            <span style="color: #9B9B9B; font-weight: bold; margin-bottom: 8px;">От</span>
+                        <div class="dropdown--list input-daterange input-group" id="datepicker">
+                            <label for="select-start-date" style="color: #9B9B9B; font-weight: bold; margin-bottom: 8px;">От</label>
                             <div class="dropdown--date-wrapper">
-                                <input type="text" name="select-start-date" value="" class="dropdown--date">
+                                <input type="text" name="select-start-date" id="select-start-date" class="dropdown--date">
                                 <i class="fa fa-calendar-alt"></i>
                             </div>
-                            <span style="color: #9B9B9B; font-weight: bold; margin-bottom: 8px;">До</span>
+                            <label for="select-end-date" style="color: #9B9B9B; font-weight: bold; margin-bottom: 8px;">До</label>
                             <div class="dropdown--date-wrapper">
-                                <input type="text" name="select-start-date" value="" class="dropdown--date">
+                                <input type="text" name="select-end-date" id="select-end-date" class="dropdown--date">
                                 <i class="fa fa-calendar-alt"></i>
                             </div>
                             <button class="dropdown--text-button">Сбросить даты</button>
                         </div>
+                    </div>
+
+                    <div class="dropdown--container">
+                        <button class="dropdown--clear">
+                            <i class="fa fa-redo">
+                            </i>
+                            Сбросить фильтры
+                        </button>
                     </div>
 
                 </div>
@@ -377,6 +367,42 @@ $(document).ready(function () {
         $('#menu').removeClass('translate0').addClass('translate400');
     });
 });
+</script>
+
+<script src="js/bootstrap/bootstrap-datepicker.min.js"></script>
+<script src="js/bootstrap/bootstrap-datepicker.ru.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var daterange = $('.input-daterange');
+        var datefield = $('.dropdown--date');
+
+        daterange.datepicker({
+            format: "dd.mm.yyyy",
+            language: "ru",
+            clearBtn: true,
+            autoclose: true,
+        });
+
+        daterange.datepicker().on('change', function () {
+
+            var flag = false;
+            datefield.filter(function() {
+                if (this.value !== '') {
+                    flag = true;
+                    return false;
+                }
+            });
+
+            if (flag) {
+                $(this).closest('.dropdown--container').find('.dropdown--button').addClass('has-filters');
+            } else {
+                $(this).closest('.dropdown--container').find('.dropdown--button').removeClass('has-filters');
+            }
+
+        })
+    });
+
 </script>
 
 <script>
@@ -426,8 +452,10 @@ $(document).ready(function () {
                 $(this).closest('.dropdown--container').find(list).addClass('visible');
 
                 // пролистать до активного элемента
-                var scrollList = $(this).closest('.dropdown--container').find(list).find('.dropdown--list-ul')
-                scrollList.scrollTop(scrollList.scrollTop() + scrollList.find('.active').position().top + (-72));
+                var scrollList = $(this).closest('.dropdown--container').find(list).find('.dropdown--list-ul');
+                if (scrollList.find('.active').position() !== undefined) {
+                    scrollList.scrollTop(scrollList.scrollTop() + scrollList.find('.active').position().top + (-72));
+                }
             }
         });
 
@@ -436,7 +464,8 @@ $(document).ready(function () {
         {
             // if the target of the click isn't the container nor a descendant of the container
             if (!container.is(e.target) && container.has(e.target).length === 0
-            && !list.is(e.target) && list.has(e.target).length === 0)
+                && !list.is(e.target) && list.has(e.target).length === 0
+                && !$('.datepicker').is(e.target) && $('.datepicker').has(e.target).length === 0)
             {
                 list.removeClass('visible');
                 container.removeClass('active');
@@ -471,6 +500,7 @@ $(document).ready(function () {
                 $(this).css("display", "block");
             });
         });
+
 
     });
 </script>

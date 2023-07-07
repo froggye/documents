@@ -1,6 +1,6 @@
 /* Фильтры */
 
-/* Единственный выбор */
+/* выбор одного варианта */
 document.querySelectorAll('.dropdown-single').forEach(function (dropdownWrapper) {
     const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
     const dropdownList = dropdownWrapper.querySelector('.dropdown--list');
@@ -31,6 +31,7 @@ document.querySelectorAll('.dropdown-single').forEach(function (dropdownWrapper)
 
 });
 
+/* чекбоксы */
 document.querySelectorAll('.dropdown-checkbox').forEach(function (dropdownWrapper) {
     const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
     const dropdownList = dropdownWrapper.querySelector('.dropdown--list');
@@ -89,4 +90,71 @@ document.querySelectorAll('.dropdown-checkbox').forEach(function (dropdownWrappe
         dropdownBtn.classList.remove('has-filters');
     });
 
+});
+
+/* интервал дат */
+document.querySelectorAll('.dropdown-datepicker').forEach(function (dropdownWrapper) {
+    const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
+    const dropdownList = dropdownWrapper.querySelector('.dropdown--list');
+    const dropdownItems = dropdownWrapper.querySelectorAll('.dropdown--date');
+    const clearButton = dropdownWrapper.querySelector('.dropdown--text-button');
+
+    // открыть-закрыть выпадающее меню
+    dropdownBtn.addEventListener('click', function () {
+        this.classList.toggle('active');
+        dropdownList.classList.toggle('visible');
+    });
+
+
+    clearButton.addEventListener('click', function () {
+        dropdownItems.forEach(function (el) {
+            el.value = '';
+        });
+
+        dropdownBtn.classList.remove('has-filters');
+    });
+
+});
+
+/* очистить фильтры */
+const clearAll = document.querySelector('.dropdown--clear');
+clearAll.addEventListener('click', function () {
+    document.querySelectorAll('.dropdown-single').forEach(function (dropdownWrapper) {
+        const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
+        const dropdownItems = dropdownWrapper.querySelectorAll('.dropdown--list-item');
+        const dropdownInput = dropdownWrapper.querySelector('.dropdown--input-hidden');
+
+        dropdownBtn.classList.remove('has-filters');
+        dropdownInput.value = '';
+
+        dropdownItems.forEach(function (listItem) {
+            listItem.classList.remove('active');
+        });
+        dropdownItems[0].classList.add('active');
+    });
+
+    document.querySelectorAll('.dropdown-checkbox').forEach(function (dropdownWrapper) {
+        const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
+        const dropdownItems = dropdownWrapper.querySelectorAll('.dropdown--list-item');
+
+        dropdownBtn.classList.remove('has-filters');
+
+        dropdownItems.forEach(function (listItem) {
+            listItem.classList.remove('active');
+            let checkbox = listItem.querySelector('input[type="checkbox"]');
+            checkbox.checked = false;
+        });
+
+    });
+
+    document.querySelectorAll('.dropdown-datepicker').forEach(function (dropdownWrapper) {
+        const dropdownBtn = dropdownWrapper.querySelector('.dropdown--button');
+        const dropdownItems = dropdownWrapper.querySelectorAll('.dropdown--date');
+
+        dropdownBtn.classList.remove('has-filters');
+        dropdownItems.forEach(function (el) {
+            el.value = '';
+        });
+
+    });
 });
