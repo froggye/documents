@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="css/mainNew.css">
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-    <script src="js/bootstrap/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap/bootstrap.bundle.js" async></script>
 
 <!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.css">-->
 <!--    <link rel="stylesheet" href="css/font-awesome/font-awesome.min.css">-->
@@ -112,8 +112,238 @@
                     <i class="fa fa-search"></i>
                 </button>
                 <input type="text" class="document-search-field" placeholder="Найти по всем документам">
+                <span class="document-clear-button">
+                    <i class="fa fa-close"></i>
+                </span>
             </form>
 
+            <section class="document-filters">
+                <div class="dropdown">
+                    <div class="dropdown--container dropdown-checkbox">
+                        <button type="button" class="dropdown--button">
+                            <span>Номер</span>
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown--list">
+                            <div class="document-search">
+                                <span class="document-search-button">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                                <input type="text" class="document-search-field" placeholder="Найти">
+                                <span class="document-clear-button">
+                                    <i class="fa fa-close"></i>
+                                </span>
+                            </div>
+                            <ul class="dropdown--list-ul dropdown--list-chb">
+                                <li class="dropdown--list-item" data-value="1">
+                                    <label for="i-1">1
+                                        <input type="checkbox" id="i-1" name="i-1">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="2">
+                                    <label for="i-2">2
+                                        <input type="checkbox" id="i-2" name="i-2">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="3">
+                                    <label for="i-3">3
+                                        <input type="checkbox" id="i-3" name="i-3">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="4">
+                                    <label for="i-4">4
+                                        <input type="checkbox" id="i-4" name="i-4">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="5">
+                                    <label for="i-5">5
+                                        <input type="checkbox" id="i-5" name="i-5">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="6">
+                                    <label for="i-6">6
+                                        <input type="checkbox" id="i-6" name="i-6">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="7">
+                                    <label for="i-7">7
+                                        <input type="checkbox" id="i-7" name="i-7">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="8">
+                                    <label for="i-8">8
+                                        <input type="checkbox" id="i-8" name="i-8">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="9">
+                                    <label for="i-9">9
+                                        <input type="checkbox" id="i-9" name="i-9">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="10">
+                                    <label for="i-10">10
+                                        <input type="checkbox" id="i-10" name="i-10">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="11">
+                                    <label for="i-11">11
+                                        <input type="checkbox" id="i-11" name="i-11">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="12">
+                                    <label for="i-12">12
+                                        <input type="checkbox" id="i-12" name="i-12">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="13">
+                                    <label for="i-13">13
+                                        <input type="checkbox" id="i-13" name="i-13">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="14">
+                                    <label for="i-14">14
+                                        <input type="checkbox" id="i-14" name="i-14">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="15">
+                                <label for="i-15">15
+                                    <input type="checkbox" id="i-15" name="i-15">
+                                    <span class="checkbox--mark"></span>
+                                </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="16">
+                                    <label for="i-16">16
+                                        <input type="checkbox" id="i-16" name="i-16">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="17">
+                                    <label for="i-17">17
+                                        <input type="checkbox" id="i-17" name="i-17">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="18">
+                                    <label for="i-18">18
+                                        <input type="checkbox" id="i-18" name="i-18">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="19">
+                                    <label for="i-19">19
+                                        <input type="checkbox" id="i-19" name="i-19">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="20">
+                                    <label for="i-20">20
+                                        <input type="checkbox" id="i-20" name="i-20">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="21">
+                                    <label for="i-21">21
+                                        <input type="checkbox" id="i-21" name="i-21">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="22">
+                                    <label for="i-22">22
+                                        <input type="checkbox" id="i-22" name="i-22">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="23">
+                                    <label for="i-23">23
+                                        <input type="checkbox" id="i-23" name="i-23">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="24">
+                                    <label for="i-24">24
+                                        <input type="checkbox" id="i-24" name="i-24">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="25">
+                                    <label for="i-25">25
+                                        <input type="checkbox" id="i-25" name="i-25">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="26">
+                                    <label for="i-26">26
+                                        <input type="checkbox" id="i-26" name="i-26">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                                <li class="dropdown--list-item" data-value="27">
+                                    <label for="i-27">27
+                                        <input type="checkbox" id="i-27" name="i-27">
+                                        <span class="checkbox--mark"></span>
+                                    </label>
+                                </li>
+                            </ul>
+                            <button class="dropdown--text-button">Сбросить фильтры</button>
+                        </div>
+
+                    </div>
+
+                    <div class="dropdown--container dropdown-single">
+                        <button type="button" class="dropdown--button">
+                            <span>Тема</span>
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown--list">
+                            <div class="document-search">
+                                <span class="document-search-button">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                                <input type="text" class="document-search-field" placeholder="Найти">
+                                <span class="document-clear-button">
+                                    <i class="fa fa-close"></i>
+                                </span>
+                            </div>
+                            <ul class="dropdown--list-ul dropdown--list-single">
+                                <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
+                                <li class="dropdown--list-item" data-value="1">1</li>
+                                <li class="dropdown--list-item" data-value="2">2</li>
+                                <li class="dropdown--list-item" data-value="3">3</li>
+
+                            </ul>
+                            <input type="text" name="select-category" value="" class="dropdown--input-hidden">
+                        </div>
+                    </div>
+                    <div class="dropdown--container dropdown-single">
+                        <button type="button" class="dropdown--button">
+                            <span>Дата</span>
+                            <i class="fa fa-angle-down"></i>
+                        </button>
+                        <ul class="dropdown--list dropdown--list-single">
+                            <li class="dropdown--list-item active" data-value="Не выбрано">Не выбрано</li>
+                            <li class="dropdown--list-item" data-value="1">1</li>
+                            <li class="dropdown--list-item" data-value="2">2</li>
+                            <li class="dropdown--list-item" data-value="3">3</li>
+                        </ul>
+                        <input type="text" name="select-category" value="" class="dropdown--input-hidden">
+                    </div>
+
+                </div>
+            </section>
 
         </div>
     </div>
@@ -143,8 +373,101 @@ $(document).ready(function () {
 });
 </script>
 
+<script>
+    /* Строка поиска документов */
 
+    var searchField = $('.document-search-field');
+    var clearBtn = $('.document-clear-button');
 
+    // if (searchField.val() !== '') {
+    //     clearBtn.css('opacity', '1');
+    // }
+    // else {
+    //     clearBtn.css('opacity', '0');
+    // }
+    searchField.val('');
+    clearBtn.css('opacity', '0');
+
+    searchField.keyup(function() {
+        if ($(this).val() !== '') {
+            $(this).closest('.document-search').find(clearBtn).css('opacity', '1');
+        }
+        else {
+            $(this).closest('.document-search').find(clearBtn).css('opacity', '0');
+        }
+    });
+
+    clearBtn.click(function() {
+        $(this).closest('.document-search').find(searchField).val('');
+        $(this).css('opacity', '0');
+    });
+</script>
+
+<script type="text/javascript" src="js/document-filters.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var container = $(".dropdown--button");
+        var list = $(".dropdown--list");
+
+        container.click(function() {
+            if ($(this).hasClass('active')){
+
+                // нажатие по другому фильтру (оставить только один активный)
+                container.removeClass('active');
+                list.removeClass('visible');
+                $(this).addClass('active');
+                $(this).closest('.dropdown--container').find(list).addClass('visible');
+
+                // пролистать до активного элемента
+                var scrollList = $(this).closest('.dropdown--container').find(list).find('.dropdown--list-ul')
+                scrollList.scrollTop(scrollList.scrollTop() + scrollList.find('.active').position().top + (-72));
+            }
+        });
+
+        // нажатие вне фильтра
+        $(document).mouseup(function(e)
+        {
+            // if the target of the click isn't the container nor a descendant of the container
+            if (!container.is(e.target) && container.has(e.target).length === 0
+            && !list.is(e.target) && list.has(e.target).length === 0)
+            {
+                list.removeClass('visible');
+                container.removeClass('active');
+            }
+        });
+
+        // поиск внутри фильтров
+        var filterSearch = $(".document-search-field");
+        var clearSearch = $(".document-clear-button");
+        
+        filterSearch.keyup(function() {
+            var filter = $(this).val().toUpperCase();
+            var valueList = $(this).closest('.dropdown--list').find('.dropdown--list-ul').find('.dropdown--list-item');
+
+            valueList.each(function () {
+                var dataValue = $(this).data('value');
+                if (typeof dataValue === 'number') {
+                    dataValue = ""+dataValue;
+                }
+                if(dataValue.toUpperCase().indexOf(filter) > -1) {
+                    $(this).css("display", "block");
+                } else {
+                    $(this).css("display", "none");
+                }
+            })
+        });
+
+        clearSearch.click(function() {
+            var valueList = $(this).closest('.dropdown--list').find('.dropdown--list-ul').find('.dropdown--list-item');
+
+            valueList.each(function () {
+                $(this).css("display", "block");
+            });
+        });
+
+    });
+</script>
 
 </body>
 </html>
