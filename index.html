@@ -66,11 +66,8 @@
         <aside class="side-menu">
             <div class="side-menu--mobile">
                 <button id="side-menu--open">
-<!--                    <i class="fa fa-list"></i>-->
-<!--                    <i class="fa fa-table"></i>-->
                     <i class="fa fa-list-ul"></i>
-<!--                    <i class="fa fa-angle-double-right"></i>-->
-                    <span>Уставы</span>
+                    <span>Приказы</span>
                 </button>
             </div>
             <div class="side-menu-container translate400" id="menu">
@@ -79,7 +76,7 @@
                         <i class="fa fa-close"></i>
                     </button>
                 </div>
-                <a class="button-link active" href="#">Уставы</a>
+                <a class="button-link" href="#">Приказы</a>
 
                 <!-- ПОДПУНКТЫ -->
 <!--                <ul>-->
@@ -91,7 +88,7 @@
                 <a class="button-link" href="#">Свидетельства</a>
                 <a class="button-link" href="#">Лицензии</a>
                 <a class="button-link" href="#">Положения</a>
-                <a class="button-link" href="#">Приказы</a>
+                <a class="button-link active" href="#">Приказы</a>
                 <a class="button-link" href="#">Порядки</a>
                 <a class="button-link" href="#">Правила</a>
                 <a class="button-link" href="#">Программы</a>
@@ -341,6 +338,49 @@
                 </div>
             </section>
 
+            <section class="document-table">
+                <div style="overflow: auto">
+                    <table id="document-table">
+                        <tr>
+                            <th>Тип документа</th>
+                            <th onclick="sortTable(1)">Название <i class="fa fa-sort"></i></th>
+                            <th onclick="sortTable(2)">Номер <i class="fa fa-sort"></i></th>
+                            <th onclick="sortDate(3)">Дата <i class="fa fa-sort"></i></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Приказ</td>
+                            <td>«О составе Квалификационной комиссии»</td>
+                            <td style="white-space: nowrap">№ 001/0003</td>
+                            <td>09.04.2023</td>
+                            <td><a href="" target="_blank" title="Скачать"><i class="fa fa-file-download"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Приказ</td>
+                            <td>«Об образовательных структурных подразделениях в организационной структуре университета»</td>
+                            <td style="white-space: nowrap">№ 001/0051</td>
+                            <td>09.01.2023</td>
+                            <td><a href="" target="_blank" title="Скачать"><i class="fa fa-file-download"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Приказ</td>
+                            <td>«О назначении ответственного за работу по повышению доступности и качества образования для лиц с инвалидностью»</td>
+                            <td style="white-space: nowrap">№ 001/0123</td>
+                            <td>08.01.2023</td>
+                            <td><a href="" target="_blank" title="Скачать"><i class="fa fa-file-download"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Приказ</td>
+                            <td>«О признании несостоявшимся конкурса на замещение должностей педагогических работников, относящихся к профессорско-преподавательскому составу»</td>
+                            <td style="white-space: nowrap">№ 001/0138</td>
+                            <td>10.03.2023</td>
+                            <td><a href="" target="_blank" title="Скачать"><i class="fa fa-file-download"></i></a></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </section>
+
         </div>
     </div>
 
@@ -400,6 +440,15 @@ $(document).ready(function () {
                 $(this).closest('.dropdown--container').find('.dropdown--button').removeClass('has-filters');
             }
 
+        });
+
+        var clear = $('#datepicker .dropdown--text-button');
+        clear.click(function () {
+            daterange.datepicker('clearDates');
+        });
+        var clearAll = $('.dropdown--clear');
+        clearAll.click(function () {
+            daterange.datepicker('clearDates');
         })
     });
 
@@ -503,6 +552,90 @@ $(document).ready(function () {
 
 
     });
+</script>
+
+
+<script>
+    function sortTable(n) {
+        var table = document.getElementById('document-table');
+        var switching = true;
+        var dir = "asc";
+        var rows, shouldSwitch, switchCount = 0;
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (var i = 1; i < (rows.length - 1); i++) {
+               shouldSwitch = false;
+               var x = rows[i].getElementsByTagName("TD")[n];
+               var y = rows[i + 1].getElementsByTagName("TD")[n];
+               if (dir === "asc") {
+                   // по возрастанию
+                   if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                       shouldSwitch = true;
+                       break;
+                   }
+               } else if (dir === "desc") {
+                   // по убыванию
+                   if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                       shouldSwitch = true;
+                       break;
+                   }
+               }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchCount++;
+            }else {
+                if (switchCount === 0 && dir === "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
+
+    function sortDate(n) {
+        var table = document.getElementById('document-table');
+        var switching = true;
+        var dir = "asc";
+        var rows, shouldSwitch, switchCount = 0, i;
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+                var x = rows[i].getElementsByTagName("TD")[n].innerHTML.split('.');
+                var dateX = new Date(x[2], x[1] - 1, x[0]);
+                var y = rows[i + 1].getElementsByTagName("TD")[n].innerHTML.split('.');
+                var dateY = new Date(y[2], y[1] - 1, y[0]);
+
+                if (dir === "asc") {
+                    // по возрастанию
+                    if (dateX > dateY) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir === "desc") {
+                    // по убыванию
+                    if (dateX < dateY) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchCount++;
+            }else {
+                if (switchCount === 0 && dir === "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    }
 </script>
 
 </body>

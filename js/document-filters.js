@@ -107,9 +107,9 @@ document.querySelectorAll('.dropdown-datepicker').forEach(function (dropdownWrap
 
 
     clearButton.addEventListener('click', function () {
-        dropdownItems.forEach(function (el) {
-            el.value = '';
-        });
+        // dropdownItems.forEach(function (el) {
+        //     el.value = '';
+        // });
 
         dropdownBtn.classList.remove('has-filters');
     });
@@ -152,9 +152,9 @@ clearAll.addEventListener('click', function () {
         const dropdownItems = dropdownWrapper.querySelectorAll('.dropdown--date');
 
         dropdownBtn.classList.remove('has-filters');
-        dropdownItems.forEach(function (el) {
-            el.value = '';
-        });
+        // dropdownItems.forEach(function (el) {
+        //     el.value = '';
+        // });
 
     });
 });

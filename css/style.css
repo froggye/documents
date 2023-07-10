@@ -393,7 +393,7 @@ h3, .h3 {
     overflow: hidden;
     width: 100%;
     max-width: 32%;
-    z-index: 2;
+    z-index: 100;
 
     opacity: 0;
     visibility: hidden;
@@ -560,6 +560,48 @@ h3, .h3 {
 .dropdown--clear {
     all: unset;
     margin: 8px;
-    color: #8C8C8C;
+    color: #595959;
+    opacity: 60%;
     font-weight: bold;
+}
+
+.dropdown--clear:hover {
+    opacity: 100%;
+}
+
+
+/*======================= ТАБЛИЦА =====================*/
+
+.document-table table {
+    width: 100%;
+}
+
+.document-table table th, .document-table table td {
+    padding: 12px 8px;
+}
+
+.document-table table tr {
+    border-bottom: 1px solid #DADADA;
+}
+
+.document-table table tr:first-child, .document-table table tr:last-child {
+    border-bottom: 2px solid #444A8F;
+}
+
+.document-table table th {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #595959;
+    opacity: 60%;
+    font-size: 14px;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    position: relative;
+    z-index: -1;
+}
+
+.document-table table td a {
+    font-size: 18px;
+    margin: 0 8px;
 }
